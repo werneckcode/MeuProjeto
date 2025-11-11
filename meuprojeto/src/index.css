@@ -1,0 +1,22 @@
+ * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Neuton", serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
+:root {
+  --corBackground: #ffffff;
+  --corPrincipal: #EB7932;
+  --corFontClara: #FFFFFF;
+  --corFontEscura: #000000;
+  --alturaRodape: 60px;
+  --fontLogo: "Julius Sans One", sans-serif;
+  --contComplementar: "Bellota", system-ui;
+}
+
+body{
+  background-color: var(--corBackground);
+}
