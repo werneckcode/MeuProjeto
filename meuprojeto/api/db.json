@@ -1,0 +1,46 @@
+{
+  "users": [
+    {
+      "email": "jacquin@bolos.com",
+      "senha": "1234"
+    }
+  ],
+  "burguer": [
+    {
+      "nome": "Cheddar a Vapor",
+      "categorias": ["frango"],
+      "descricao": "Pão com gergelim, dois frangos, molho cremoso sabor queijo cheddar, maionese e alface.",
+      "imagens": ["card_frango_5.png"],
+      "id": "fr1",
+      "preco": 45.8,
+      "peso": null
+    },
+    {
+      "nome": "Expresso Duo",
+      "categorias": ["frango"],
+      "descricao": "Um suculento hambúrguer de frango, alface, tomate e um delicioso molho furioso de alho.",
+      "imagens": ["card_frango_2.png"],
+      "id": "fr2",
+      "preco": 46.99,
+      "peso": null
+    },
+    {
+      "nome": "Plataforma Chicken",
+      "categorias": ["frango"],
+      "descricao": "Um delicioso e suculento filé de frango crocante, maionese e alface.",
+      "imagens": ["card_frango_3.png"],
+      "id": "fr3",
+      "preco": 43.3,
+      "peso": null
+    },
+    {
+      "nome": "Combo Ferrovia",
+      "categorias": ["frango"],
+      "descricao": "Maionese, alface, tomate, cebola, ketchup, picles e fritas.",
+      "imagens": ["transferir_(3)_1.png"],
+      "id": "fr4",
+      "preco": 58.7,
+      "peso": null
+    }
+  ]
+}

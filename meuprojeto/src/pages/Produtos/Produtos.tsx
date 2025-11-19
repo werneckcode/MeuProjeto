@@ -1,74 +1,56 @@
-import banner_1 from '../../assets/card frango 5.png'
-import banner_2 from '../../assets/card frango 2.png'
-import banner_3 from '../../assets/card frango 3.png'
-import banner_4 from '../../assets/transferir (3) 1.png'
-import whatsapp from '../../assets/Ícone Whatsapp Menu.png'
+
 import './Produto.css';
+import { useEffect, useState } from 'react'
+import type { BurguerStation } from '../../src/types/BurguerStation'
+import type { Burguer } from '../../types/Burguer'
+import { getBurguerStation } from '../../src/services/burguerStationService';
+import '../../assets/Logo Menu.png'
 
-<main className="iconedefundo_cardapio"> 
-        <section>
-            <div>
-                <img className="img_logo" src="../Menu/assets/Logo Menu.png" alt="" />
-            </div>
-        </section>
+export default function Produtos() {
 
-        <h1>LANCHES DE FRANGO</h1>
+    const [burguer, setBurguer] = useState<BurguerStation[]>([]);
 
-        <section className="cards">
+    const fetchBurguer = async () => {
+        try {
+            const dados = await getBurguerStation();
+            console.log("lista de burguer vinda da API: ", dados);
+            setBurguer(dados);
+        } catch (error) {
+            console.error("Erro ao executar getBurguer: ", error);
+        }
 
-            <section className="container">
-                <div className="sessao_card1">
-                    <div className="div_img">
-                        <img src={banner_1} alt="" />
-                    </div>
-                    <div className="descricao">
-                        <h2>CHEDDAR A VAPOR </h2>
-                        <p> Pão com gergelim, dois frangos, molho cremoso sabor queijo cheddar, maionese e alface</p>
-                        <span> R$ 45,80</span>
-                    </div>
-                </div>
-                <div className="sessao_card2">
-                    <div className="div_img">
-                        <img src={banner_2} alt="" />
-                    </div>
-                    <div className="descricao">
-                        <h2>EXPRESSO DUO </h2>
-                        <p> Um suculento hambúrguer de frango, alface, tomate e um delicioso molho furioso de alho.
-                        </p>
-                        <span> R$46,99</span>
-                    </div>
-                </div>
+    }
 
-                <div className="sessao_card3">
-                    <div className="div_img">
-                        <img src={banner_3} alt="" />
-                    </div>
-                    <div className="descricao">
-                        <h2>PLATAFORMA CHICKEN </h2>
-                        <p> Um delicioso e suculento filé de frango crocante, maionese e alface.</p>
-                        <span> R$43,30</span>
-                    </div>
-                </div>
+    useEffect(() => {
+        fetchBurguer();
+    }, [])
 
-                <div className="sessao_card4">
-                    <div className="div_img">
-                        <img src={banner_4} alt="" />
-                    </div>
-                    <div className="descricao">
-                        <h2>COMBO FERROVIA</h2>
-                        <p> Maionese, alface, tomate, cebola, ketchup, picles e fritas</p>
-                        <span> R$58,70 </span>
-                    </div>
+
+
+    return (
+        <main className="iconedefundo_cardapio">
+            <section>
+                <div>
+                    <img className="img_logo" src="../Menu/assets/Logo Menu.png" alt="" />
                 </div>
             </section>
-        </section>
 
-        <section>
-            <a className="whatsaap" href="">
-                <img src={whatsapp} alt="" />
-            </a>
+            <h1>LANCHES DE FRANGO</h1>
 
+            <section className="cards">
+                {
+                    burguer.map((b: Burguer) => (
+                        <div className="card_produto">
+                            <img src={`http://localhost:3000/static/${b.imagens[0]}`} alt={"Imagen do produto: " + b.descricao} />
+                            <h2>{b.nome}</h2>
+                            <p className='descricao'>{b.descricao}</p>
+                            <span>{b.preco}</span>
+                        </div>
+                    ))
+                }
 
-        </section>
+            </section>
 
-    </main>
+        </main>
+    )
+}

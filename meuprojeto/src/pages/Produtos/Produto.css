@@ -85,10 +85,7 @@ p {
 }
 
 
-.sessao_card4,
-.sessao_card3,
-.sessao_card2,
-.sessao_card1 {
+.card_produto{
     width: 292px;
     height: 438px;
     background: linear-gradient(178deg, rgba(229, 124, 32, 1) 50%, rgba(137, 29, 19, 1) 100%);
@@ -111,7 +108,8 @@ p {
 .div_img{
     display: flex;
     align-items: flex-end;
-    height: 200px;
+    height: 180px;
+    width: 250px;
 }
 
 .sessao_card4 .div_img img{

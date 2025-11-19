@@ -1,0 +1,9 @@
+export interface Burguer{
+    nome: string;
+    id: string | undefined;
+    descricao: string;
+    categorias: string[];
+    imagens: string[];
+    preco: number;
+    peso: number | null;
+}
